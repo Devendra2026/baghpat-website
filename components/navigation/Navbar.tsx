@@ -36,12 +36,15 @@ export default function Navbar() {
 
   // Update active tab based on path
   useEffect(() => {
-    if (pathname === "/public-grievance") setActiveTab("Public Grievance");
-    else if (pathname === "/schemes") setActiveTab("Schemes");
-    else if (pathname === "/gallery") setActiveTab("Gallery");
-    else if (pathname === "/contact-us") setActiveTab("Contact Us");
-    else if (pathname === "/about-us") setActiveTab("About-Us");
-    else setActiveTab("Home");
+    if (pathname === '/public-grievance') setActiveTab('Public Grievance');
+    else if (pathname === '/schemes') setActiveTab('Schemes');
+    else if (pathname === '/gallery') setActiveTab('Gallery');
+    else if (pathname === '/contact-us') setActiveTab('Contact Us');
+    else if (pathname === '/about-us') setActiveTab('About-Us');
+    else if (pathname === '/departments') setActiveTab('Departments');
+    else if (pathname === '/services') setActiveTab('Services');
+    else if (pathname === '/newsandnotice') setActiveTab('NewsAndNotice');
+    else setActiveTab('Home');
   }, [pathname]);
 
   const menuItems: MenuItem[] = [
@@ -49,13 +52,13 @@ export default function Navbar() {
     { name: "About Us", href: "/about", hasDropdown: false },
     {
       name: "Departments",
-      href: "/#digital-gateway",
-      hasDropdown: true,
+      href: "/departments",
+      hasDropdown: false,
       megaMenuType: "departments",
     },
     {
       name: "Our Services",
-      href: "/#citizen-services",
+      href: "/services",
       hasDropdown: true,
       megaMenuType: "services",
     },
@@ -65,9 +68,9 @@ export default function Navbar() {
       href: "/schemes",
       hasDropdown: false,
     },
-    { name: "Tenders & Notices", href: "/#news-notices", hasDropdown: false },
+    { name: "News And Notice", href: "/newsandnotice", hasDropdown: false },
     { name: "Gallery", href: "/gallery", hasDropdown: false },
-    { name: "Contact Us", href: "/contact-us", hasDropdown: false },
+    { name: "Contact Us", href: "/contact", hasDropdown: false },
     
   ];
 
