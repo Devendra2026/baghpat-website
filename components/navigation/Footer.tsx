@@ -1,0 +1,164 @@
+"use client";
+
+import { Mail, Phone, MapPin, ArrowUp, ShieldCheck, Heart } from "lucide-react";
+
+export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <footer id="contact-us" className="bg-gov-blue-dark text-slate-300 border-t-4 border-gov-saffron relative z-30">
+      
+      {/* Top Main Link Matrix */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        {/* Col 1: Brand & Bio */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <svg className="w-8 h-8 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="48" stroke="#FF9933" strokeWidth="4" fill="#0A2540" />
+              <path d="M35 50 L65 50 M50 35 L50 65" stroke="#FFFFFF" strokeWidth="4" />
+            </svg>
+            <div className="leading-none text-white">
+              <h3 className="text-sm font-extrabold uppercase tracking-wider"> Town Panchayat, Aminagar Sarai, Baghpat </h3>
+              <p className="text-[10px] text-gov-saffron font-bold uppercase mt-0.5">Panchayat Administration</p>
+            </div>
+          </div>
+          <p className="text-xs text-slate-400 leading-relaxed font-medium">
+            Authorized administrative portal of Town Panchayat, Aminagar Sarai, Baghpat, District Baghpat, Government of Uttar Pradesh. Empowering citizens through digitized services.
+          </p>
+        </div>
+
+        {/* Col 2: Useful Links */}
+        <div>
+          <h4 className="text-sm font-black uppercase text-white border-b border-white/10 pb-2 mb-4 tracking-wider">
+            Quick Navigation
+          </h4>
+          <ul className="space-y-2.5 text-xs font-semibold">
+            {[
+              { name: "About Baghpat City", href: "#about-us" },
+              { name: "Executive Committee Members", href: "#about-us" },
+              { name: "Online Citizen Charter", href: "#about-us" },
+              { name: "Tenders & Proposals", href: "#news-notices" },
+              { name: "Official Recruitment portal", href: "#news-notices" },
+              { name: "Terms & Conditions Disclaimer", href: "#" },
+            ].map((link) => (
+              <li key={link.name}>
+                <a href={link.href} className="hover:text-gov-saffron hover:underline transition-colors flex items-center gap-1.5">
+                  <span className="text-gov-saffron font-bold">›</span>
+                  <span>{link.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Col 3: Online Citizen Desks */}
+        <div>
+          <h4 className="text-sm font-black uppercase text-white border-b border-white/10 pb-2 mb-4 tracking-wider">
+            Online Citizen Desks
+          </h4>
+          <ul className="space-y-2.5 text-xs font-semibold">
+            {[
+              { name: "Property & House Tax Portal", href: "#citizen-services" },
+              { name: "Water Supply Bills & NOC", href: "#citizen-services" },
+              { name: "Birth Certificate Applications", href: "#citizen-services" },
+              { name: "Death Record Verification", href: "#citizen-services" },
+              { name: "Shop / Trade Licenses desk", href: "#citizen-services" },
+              { name: "Building Permission NOC portal", href: "#citizen-services" },
+            ].map((link) => (
+              <li key={link.name}>
+                <a href={link.href} className="hover:text-gov-saffron hover:underline transition-colors flex items-center gap-1.5">
+                  <span className="text-gov-saffron font-bold">›</span>
+                  <span>{link.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Col 4: Contact info */}
+        <div>
+          <h4 className="text-sm font-black uppercase text-white border-b border-white/10 pb-2 mb-4 tracking-wider">
+            Official Contact Desk
+          </h4>
+          <ul className="space-y-3.5 text-xs font-semibold">
+            <li className="flex items-start gap-2.5">
+              <MapPin className="w-4 h-4 text-gov-saffron shrink-0 mt-0.5" />
+              <span>Town Hall, Main Road, Baghpat, Uttar Pradesh, India - 250609</span>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Phone className="w-4 h-4 text-gov-saffron shrink-0" />
+              <a href="tel:+911212222040" className="hover:text-gov-saffron hover:underline">
+                +91 121-2222040
+              </a>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Mail className="w-4 h-4 text-gov-saffron shrink-0" />
+              <a href="mailto:info@baghpatnagarpalika.in" className="hover:text-gov-saffron hover:underline">
+                info@baghpatnagarpalika.in
+              </a>
+            </li>
+            <li className="flex items-center gap-2.5 bg-white/5 border border-white/10 px-3 py-2 rounded-lg">
+              <ShieldCheck className="w-5 h-5 text-gov-saffron shrink-0 animate-pulse" />
+              <div className="leading-tight">
+                <span className="text-[9px] text-slate-400 block font-bold">HELPLINE NUMBER</span>
+                <a href="tel:18001804040" className="text-xs font-black text-white hover:underline">
+                  1800-180-4040
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      {/* Mid Badges & Partners */}
+      <div className="border-t border-white/10 py-6 bg-black/15">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
+          <div className="flex flex-wrap justify-center sm:justify-start items-center gap-6">
+            <div className="border border-white/10 px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-slate-400 uppercase">
+              Digital India Partner
+            </div>
+            <div className="border border-white/10 px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-slate-400 uppercase">
+              Swachh Bharat Member
+            </div>
+            <div className="border border-white/10 px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-slate-400 uppercase">
+              NIC Hosted
+            </div>
+          </div>
+          
+          {/* Back to top widget */}
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-gov-saffron hover:bg-gov-saffron-dark text-white rounded-lg text-xs font-bold transition-all shadow-md cursor-pointer hover:scale-102"
+          >
+            <span>Back to Top</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
+        </div>
+      </div>
+
+      {/* Bottom Legal & Developer Signatures */}
+      <div className="border-t border-white/10 bg-black/30 py-6 text-center text-xs font-medium text-slate-500">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-3">
+          <p className="text-slate-400">
+            © {new Date().getFullYear()} Town Panchayat , Aminagar Sarai,Baghpat. All Rights Reserved.
+          </p>
+          <p className="text-[10px] text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            Disclaimer: Content on this website is published and managed by Town Panchayat , Aminagar Sarai ,Baghpat . For any enquiries regarding information provided, please contact the Public Relations desk. Host nodes are secured under State Treasury systems.
+          </p>
+          <div className="flex items-center justify-center gap-1.5 text-[10px] text-slate-600 font-semibold pt-1">
+            <span>Developed with</span>
+            <Heart className="w-3 h-3 text-red-500 fill-red-500" />
+            <span>by NIC State Centre</span>
+            <span>|</span>
+            <span>Last Updated: June 22, 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  );
+}
