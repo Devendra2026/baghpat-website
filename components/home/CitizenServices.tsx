@@ -122,6 +122,7 @@ export default function CitizenServices() {
   return (
     <section id="citizen-services" className="py-20 px-4 md:px-8 bg-white relative">
       <div className="max-w-7xl mx-auto">
+       
         {/* Section Title */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs bg-gov-blue-medium/10 text-gov-blue-medium px-3 py-1 rounded-full font-bold uppercase tracking-wider border border-gov-blue-medium/20">
@@ -232,7 +233,8 @@ export default function CitizenServices() {
                   </div>
                 ) : (
                   <form onSubmit={handleFormSubmit} className="space-y-4">
-                    {/* Common Client Details */}
+                   
+                      {/* Common Client Details */}
                     <div className="grid grid-cols-2 gap-3">
                       <div>
                         <label className="block text-[10px] font-bold text-slate-500 uppercase mb-1">

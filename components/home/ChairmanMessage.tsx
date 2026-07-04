@@ -10,11 +10,13 @@ export default function ChairmanMessage() {
 
   return (
     <section id="about-us" className="py-20 px-4 md:px-8 bg-slate-50 relative overflow-hidden">
+     
       {/* Background decorations */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-gov-saffron/5 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute right-0 bottom-0 w-96 h-96 bg-gov-blue-medium/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
+       
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs bg-gov-saffron/10 text-gov-saffron px-3 py-1 rounded-full font-bold uppercase tracking-wider border border-gov-saffron/20">
@@ -31,6 +33,7 @@ export default function ChairmanMessage() {
 
         {/* Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+         
           {/* Left Column: Official Profile Card */}
           <div className="lg:col-span-4 flex flex-col items-center">
             <m.div
@@ -78,6 +81,7 @@ export default function ChairmanMessage() {
           {/* Right Column: Dynamic Info Sheet */}
           <div className="lg:col-span-8">
             <div className="bg-white rounded-2xl border border-slate-100 shadow-lg p-6 md:p-8 min-h-95 flex flex-col justify-between">
+            
               {/* Tab Selector Header */}
               <div className="flex border-b border-slate-100 pb-3 gap-2">
                 <button

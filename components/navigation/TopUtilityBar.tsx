@@ -22,6 +22,7 @@ export default function TopUtilityBar() {
 
   return (
     <div className="bg-gov-blue-dark text-slate-200 text-xs py-2 px-4 md:px-8 border-b border-gov-blue-medium flex flex-wrap justify-between items-center gap-2 relative z-50">
+      
       {/* Left Contact Side */}
       <div className="flex items-center space-x-4">
         <a href="tel:+911212222040" className="flex items-center gap-1 hover:text-gov-saffron transition-colors">

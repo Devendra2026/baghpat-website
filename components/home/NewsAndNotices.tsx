@@ -129,6 +129,7 @@ Generated online via the Unified Baghpat Portal.
     <section id="news-notices" className="py-20 px-4 md:px-8 bg-white relative">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
           {/* LEFT COLUMN: Latest News (7 cols) */}
           <div className="lg:col-span-7 space-y-8">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">

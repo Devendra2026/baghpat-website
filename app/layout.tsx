@@ -13,7 +13,7 @@ import './globals.css';
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'Town Panchayat , Aminagar Sarai , Baghpat | Official Government Portal',
+  title: 'Home ',
   description:
     'Official portal of  Town Panchayat , Aminagar Sarai ,Baghpat, Uttar Pradesh. Settle property tax, pay water tax, apply for birth/death certificates, browse active tenders, and submit grievances online.',
   keywords:

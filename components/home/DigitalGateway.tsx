@@ -67,11 +67,13 @@ export default function DigitalGateway() {
 
   return (
     <section id="digital-gateway" className="py-20 px-4 md:px-8 bg-slate-50 relative">
+     
       {/* Decorative backdrop elements */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-gov-blue-light/40 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gov-orange-light/50 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
+     
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs bg-gov-saffron/10 text-gov-saffron px-3 py-1 rounded-full font-bold uppercase tracking-wider border border-gov-saffron/20">
@@ -98,6 +100,7 @@ export default function DigitalGateway() {
               className="bg-white rounded-2xl border border-slate-100 hover:border-gov-blue-medium/20 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col justify-between group"
             >
               <div>
+                
                 {/* Header Icon Card */}
                 <div
                   className={`w-14 h-14 rounded-xl bg-linear-to-br ${dept.color} text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}

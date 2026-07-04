@@ -46,18 +46,7 @@ export default function Navbar() {
 
   const menuItems: MenuItem[] = [
     { name: "Home", href: "/", hasDropdown: false },
-    // {
-    //   name: "About Us",
-    //   href: "/#about-us",
-    //   hasDropdown: false,
-    //   items: [
-    //     { name: "Overview & History", href: "/#about-us" },
-    //     { name: "Administration & Wards", href: "/#about-us" },
-    //     { name: "Key Officials Desk", href: "/#about-us" },
-    //     { name: "Citizen Charter", href: "/#about-us" },
-    //   ],
-    // },
-    { name: "About Us", href: "/about-us", hasDropdown: false },
+    { name: "About Us", href: "/about", hasDropdown: false },
     {
       name: "Departments",
       href: "/#digital-gateway",
@@ -76,7 +65,6 @@ export default function Navbar() {
       href: "/schemes",
       hasDropdown: false,
     },
-    // { name: "Events", href: "/#news-notices", hasDropdown: false },
     { name: "Tenders & Notices", href: "/#news-notices", hasDropdown: false },
     { name: "Gallery", href: "/gallery", hasDropdown: false },
     { name: "Contact Us", href: "/contact-us", hasDropdown: false },
@@ -138,6 +126,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+       
         {/* Shortened Brand name visible only when scrolled */}
         <Link
           href="/"

@@ -33,6 +33,7 @@ export default function AnnouncementTicker() {
 
   return (
     <div className="bg-red-700 text-white flex flex-col md:flex-row items-stretch border-y border-red-800 shadow-sm relative z-30 overflow-hidden">
+     
       {/* Title Segment */}
       <div className="bg-gov-blue-dark px-6 py-3 flex items-center gap-2 font-black uppercase tracking-wider text-xs md:text-sm md:skew-x-12 md:-ml-3 relative z-10 shrink-0 select-none border-r border-red-800 md:border-r-0">
         <div className="md:-skew-x-12 flex items-center gap-2">
@@ -44,6 +45,7 @@ export default function AnnouncementTicker() {
 
       {/* Marquee Content */}
       <div className="relative flex items-center overflow-hidden flex-1 py-2.5 md:py-0">
+      
         {/* Infinite scrolling text */}
         <div className="flex animate-marquee whitespace-nowrap gap-16 items-center hover:paused cursor-pointer">
           {/* First iteration */}

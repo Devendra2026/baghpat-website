@@ -28,26 +28,33 @@ export default function Header() {
     <>
       <header className="bg-white py-4 px-4 md:px-8 border-b border-slate-200">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-6">
+         
           {/* Left Side: Crest, Brand names, Taglines */}
           <div className="flex items-center text-center lg:text-left flex-col sm:flex-row gap-4">
+           
             {/* SVG Crest Logo */}
             <div className="relative group cursor-pointer transition-transform duration-300 hover:scale-105">
               <svg className="w-18 h-18" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="48" stroke="#0A2540" strokeWidth="4" fill="#F8FAFC" />
                 <circle cx="50" cy="50" r="42" stroke="#FF9933" strokeWidth="1.5" strokeDasharray="3 3" />
+               
                 {/* National Ashoka Chakra Spoke Ring */}
                 <circle cx="50" cy="50" r="30" stroke="#134074" strokeWidth="1" opacity="0.3" />
+               
                 {/* Building / Temple / Administrative block */}
                 <path d="M35 60 L65 60 L65 65 L35 65 Z" fill="#0A2540" />
                 <rect x="38" y="44" width="24" height="16" fill="#134074" />
                 <path d="M35 44 L65 44 L50 32 Z" fill="#FF9933" />
+               
                 {/* Pillars */}
                 <rect x="42" y="48" width="3" height="12" fill="#FFFFFF" />
                 <rect x="49" y="48" width="3" height="12" fill="#FFFFFF" />
                 <rect x="56" y="48" width="3" height="12" fill="#FFFFFF" />
+               
                 {/* Saffron and Green Flags */}
                 <path d="M50 32 L50 20 L57 24 Z" fill="#FF9933" />
                 <path d="M35 60 C 45 56, 55 56, 65 60" stroke="#2E7D32" strokeWidth="2.5" fill="none" />
+               
                 {/* Text Rings */}
                 <path id="curve" d="M 15 50 A 35 35 0 0 1 85 50" fill="none" />
                 <path id="curve2" d="M 85 50 A 35 35 0 0 1 15 50" fill="none" />
@@ -76,6 +83,7 @@ export default function Header() {
 
           {/* Right Side: Emergency Helpline and Quick Actions */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+           
             {/* Emergency Helpline Card */}
             <Link
               href="tel:18001804040"

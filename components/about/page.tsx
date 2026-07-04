@@ -182,7 +182,7 @@ function OfficerRow({ data }: { data: OfficerRowProps }) {
   );
 }
 
-export default function ChairmanMessage() {
+export default function AboutUs() {
   // Data for all three members in order: Chairman -> Executive Officer -> Head Clerk
   const leadersData: OfficerRowProps[] = [
     {
