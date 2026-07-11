@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function () {
   return (
     <div>
-      <NewsAndNotice/>
-     </div>
-   )
+      <NewsAndNotice />
+    </div>
+  );
  }

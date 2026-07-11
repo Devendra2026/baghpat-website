@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function () {
   return (
     <div>
-      <Gallery/>
+      <Gallery />
     </div>
-  )
+  );
 }

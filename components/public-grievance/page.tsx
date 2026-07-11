@@ -232,11 +232,12 @@ export default function PublicGrievance() {
                           <SelectValue placeholder="Select Category" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="Sanitation">Sanitation / Garbage Dumping</SelectItem>
-                          <SelectItem value="Water Supply">Water Supply / Pipeline Leakage</SelectItem>
-                          <SelectItem value="Roads">Potholes / Damaged Roadways</SelectItem>
+                          <SelectItem value="Sanitation">Garbage Dumping</SelectItem>
+                          <SelectItem value="Water Supply">Water Supply </SelectItem>
+                          <SelectItem value="Roads"> Damaged Roadways</SelectItem>
                           <SelectItem value="Streetlights">Street Lights Malfunction</SelectItem>
                           <SelectItem value="Encroachments">Illegal Encroachment</SelectItem>
+                          <SelectItem value="Encroachments">Pipeline Leakage</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

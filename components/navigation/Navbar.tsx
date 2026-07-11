@@ -161,6 +161,7 @@ export default function Navbar() {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
+                  suppressHydrationWarning
                   onClick={() => handleMenuClick(item.name, item.href)}
                   className={`flex items-center gap-1 px-3 py-2 text-xs font-bold uppercase tracking-wide rounded-md transition-all cursor-pointer ${
                     isActive

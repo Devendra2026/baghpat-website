@@ -131,6 +131,7 @@ export default function Footer() {
           
           {/* Back to top widget */}
           <button
+            suppressHydrationWarning
             onClick={scrollToTop}
             className="flex items-center gap-1.5 px-3 py-1.5 bg-gov-saffron hover:bg-gov-saffron-dark text-white rounded-lg text-xs font-bold transition-all shadow-md cursor-pointer hover:scale-102"
           >

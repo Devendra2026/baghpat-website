@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function () {
   return (
     <div>
-      <PublicGrievance/>
+      <PublicGrievance />
     </div>
-  )
+  );
 }
