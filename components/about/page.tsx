@@ -48,15 +48,15 @@ function OfficerRow({ data }: { data: OfficerRowProps }) {
           </div>
 
           {/* Portrait Frame */}
-          <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-4 bg-slate-100 border border-slate-200">
+          {/* <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-4 bg-slate-100 border border-slate-200">
             <Image
               src={data.imgSrc}
-              alt={`${data.designation} of Baghpat Nagar Palika Parishad`}
+              alt={`${data.designation} of Town Panchayat, Aminagar Sarai, Baghpt`}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 320px"
             />
-          </div>
+          </div> */}
 
           {/* Name Details */}
           <h3 className="text-lg font-black text-gov-blue-dark tracking-tight leading-tight">{data.name}</h3>
@@ -191,7 +191,7 @@ export default function AboutUs() {
       designation: 'Chairman',
       name: 'Smt. Shashi Bala',
       subText: 'Town Panchayat, Aminagar Sarai, Baghpat',
-      imgSrc: '/chairman.png',
+      imgSrc: '  ',
       term: '2023 - Present',
       status: '11 Wards Admin',
       welcomeQuote:
@@ -223,7 +223,7 @@ export default function AboutUs() {
       designation: 'Executive Officer (EO)',
       name: 'Shri. Manoj Kumar',
       subText: 'State Urban Administrative Service',
-      imgSrc: '/chairman.png',
+      imgSrc: ' ',
       term: 'Govt. Appointed',
       status: 'Executive Chief',
       welcomeQuote:
@@ -255,7 +255,7 @@ export default function AboutUs() {
       designation: 'Head Clerk',
       name: 'Shri. Rajesh Sharma',
       subText: 'Central Registry & Accounts',
-      imgSrc: '/chairman.png',
+      imgSrc: '  ',
       term: 'Senior Administration',
       status: 'Registry In-Charge',
       welcomeQuote:

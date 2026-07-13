@@ -26,7 +26,7 @@ export default function ChairmanMessage() {
             Desk of the Chairman & Administration
           </h2>
           <p className="text-sm text-slate-500 mt-2 font-medium">
-            Welcome to the official administrative portal of Baghpat Nagar Palika Parishad.
+            Welcome to the official administrative portal of Town Panchayat, Aminagar Sarai , Baghpat.
           </p>
           <div className="w-20 h-1 bg-gov-saffron mx-auto mt-4 rounded-full"></div>
         </div>
@@ -49,20 +49,20 @@ export default function ChairmanMessage() {
               </div>
 
               {/* Portrait Frame */}
-              <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-4 bg-slate-100 border border-slate-200">
+              {/* <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-4 bg-slate-100 border border-slate-200">
                 <Image
-                  src="/chairman.png"
+                  src="/chairman.png "
                   alt="Chairman of Baghpat Nagar Palika Parishad"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 320px"
                 />
-              </div>
+              </div> */}
 
               {/* Name Details */}
               <h3 className="text-lg font-black text-gov-blue-dark tracking-tight leading-tight">Smt. Shashi Bala</h3>
               <p className="text-xs font-bold text-gov-saffron uppercase tracking-widest mt-1">Chairman</p>
-              <p className="text-[10px] text-slate-400 font-semibold mt-0.5">Baghpat Nagar Palika Parishad</p>
+              <p className="text-[10px] text-slate-400 font-semibold mt-0.5">Town Panchayat , Aminagar Sarai, Baghpat</p>
 
               {/* Quick stats / terms */}
               <div className="mt-4 pt-4 border-t border-slate-50 grid grid-cols-2 gap-2 text-left">
@@ -72,7 +72,7 @@ export default function ChairmanMessage() {
                 </div>
                 <div className="bg-slate-50 p-2 rounded-lg text-center">
                   <span className="text-[9px] text-slate-400 font-bold block">WARD STATUS</span>
-                  <span className="text-xs font-extrabold text-gov-blue-dark">25 Wards Admin</span>
+                  <span className="text-xs font-extrabold text-gov-blue-dark">11 Wards Admin</span>
                 </div>
               </div>
             </m.div>
@@ -204,7 +204,7 @@ export default function ChairmanMessage() {
                   <span>Office Address: Main Town Hall, Baghpat, UP - 250609</span>
                 </div>
                 <div className="text-right sm:border-l sm:border-slate-200 sm:pl-4">
-                  <p className="text-gov-blue-dark">Baghpat Nagar Palika Parishad</p>
+                  <p className="text-gov-blue-dark">Town Panchayat , Aminagar Sarai, Baghpat</p>
                   <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">
                     Government Registry Approved
                   </p>
