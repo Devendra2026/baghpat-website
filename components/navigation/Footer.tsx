@@ -86,18 +86,18 @@ export default function Footer() {
           <ul className="space-y-3.5 text-xs font-semibold">
             <li className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-gov-saffron shrink-0 mt-0.5" />
-              <span>Town Hall, Main Road, Baghpat, Uttar Pradesh, India - 250609</span>
+              <span> Main Bazar, Town Panchayat , Aminagar Sarai, Baghpat, Uttar Pradesh, India - 250606</span>
             </li>
             <li className="flex items-center gap-2.5">
               <Phone className="w-4 h-4 text-gov-saffron shrink-0" />
-              <a href="tel:+911212222040" className="hover:text-gov-saffron hover:underline">
-                +91 121-2222040
+              <a href="tel:+918189077892" className="hover:text-gov-saffron hover:underline">
+                +91 8189077892
               </a>
             </li>
             <li className="flex items-center gap-2.5">
               <Mail className="w-4 h-4 text-gov-saffron shrink-0" />
-              <a href="mailto:info@baghpatnagarpalika.in" className="hover:text-gov-saffron hover:underline">
-                info@baghpatnagarpalika.in
+              <a href="mailto:npasarai@gmail.com" className="hover:text-gov-saffron hover:underline">
+                npasarai@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-2.5 bg-white/5 border border-white/10 px-3 py-2 rounded-lg">

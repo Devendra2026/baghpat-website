@@ -129,17 +129,6 @@ export default function Departments() {
                   ))}
                 </div>
               </div>
-
-              {/* Action Button */}
-              <div className="mt-6 pt-4 border-t border-slate-100/50">
-                <button
-                  onClick={() => alert(`Redirecting to portal page of: ${dept.name}`)}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 bg-slate-50 hover:bg-gov-blue-dark hover:text-white text-gov-blue-medium text-xs font-bold rounded-xl transition-all cursor-pointer border border-slate-100 group-hover:border-transparent"
-                >
-                  <span>View Services Gateway</span>
-                  <ArrowRight className="w-4 h-4 text-gov-saffron" />
-                </button>
-              </div>
             </m.div>
           ))}
         </div>

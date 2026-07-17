@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ChevronDown, Building, FileSpreadsheet, Newspaper, Award, Calendar, Layers, ShieldCheck, Mail, Home, Image as ImageIcon } from "lucide-react";
+import { Button } from "../ui/button";
 
 interface MenuItem {
   name: string;

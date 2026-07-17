@@ -167,7 +167,7 @@ function OfficerRow({ data }: { data: OfficerRowProps }) {
           <div className="border-t border-slate-100 pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs font-bold text-slate-500">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4 text-gov-saffron" />
-              <span>Office Address: Main Town Hall, Baghpat, UP - 250609</span>
+              <span>Office Address: Main Bazar, Town Panchayat, Aminagar Sarai, Baghpat, UP - 250606</span>
             </div>
             <div className="text-right sm:border-l sm:border-slate-200 sm:pl-4">
               <p className="text-gov-blue-dark">Town Panchayat , Aminagar Sarai , Baghpat </p>
@@ -189,7 +189,7 @@ export default function AboutUs() {
       id: 'chairman',
       roleTitle: 'Elected President',
       designation: 'Chairman',
-      name: 'Smt. Shashi Bala',
+      name: 'Smt. Sunita Mailk',
       subText: 'Town Panchayat, Aminagar Sarai, Baghpat',
       imgSrc: '  ',
       term: '2023 - Present',
@@ -221,7 +221,7 @@ export default function AboutUs() {
       id: 'eo',
       roleTitle: 'Administrative Head',
       designation: 'Executive Officer (EO)',
-      name: 'Shri. Manoj Kumar',
+      name: 'Smt. Bhawna Singh',
       subText: 'State Urban Administrative Service',
       imgSrc: ' ',
       term: 'Govt. Appointed',
@@ -253,7 +253,7 @@ export default function AboutUs() {
       id: 'head-clerk',
       roleTitle: 'Office Superintendent',
       designation: 'Head Clerk',
-      name: 'Shri. Rajesh Sharma',
+      name: 'Shri. Ankit Sharma',
       subText: 'Central Registry & Accounts',
       imgSrc: '  ',
       term: 'Senior Administration',
@@ -299,7 +299,7 @@ export default function AboutUs() {
             Desk of the Chairman & Administration
           </h2>
           <p className="text-sm text-slate-500 mt-2 font-medium">
-            Welcome to the official administrative portal of Baghpat Nagar Palika Parishad.
+            Welcome to the official administrative portal of Town Panchayat , Aminagar Sarai, Baghpat.
           </p>
           <div className="w-20 h-1 bg-gov-saffron mx-auto mt-4 rounded-full"></div>
         </div>

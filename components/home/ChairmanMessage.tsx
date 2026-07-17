@@ -60,7 +60,7 @@ export default function ChairmanMessage() {
               </div> */}
 
               {/* Name Details */}
-              <h3 className="text-lg font-black text-gov-blue-dark tracking-tight leading-tight">Smt. Shashi Bala</h3>
+              <h3 className="text-lg font-black text-gov-blue-dark tracking-tight leading-tight">Smt. Sunita Malik</h3>
               <p className="text-xs font-bold text-gov-saffron uppercase tracking-widest mt-1">Chairman</p>
               <p className="text-[10px] text-slate-400 font-semibold mt-0.5">Town Panchayat , Aminagar Sarai, Baghpat</p>
 

@@ -5,7 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { AnimatePresence, m } from 'framer-motion';
-import { CheckCircle2, Clock, Link, Mail, MapPin, Phone, Send, ShieldAlert } from 'lucide-react';
+import { CheckCircle2, Clock, Mail, MapPin, Phone, Send, ShieldAlert } from 'lucide-react';
+import Link from "next/link";
 import React, { useState } from 'react';
 
 export default function ContactUs() {
@@ -70,7 +71,7 @@ export default function ContactUs() {
                     <div>
                       <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Office Address</p>
                       <p className="text-xs font-bold text-slate-700 mt-0.5 leading-relaxed">
-                        Town Panchayat , Aminagar Sarai , Baghpat , Uttar Pradesh , 250609
+                        Main Bazar , Town Panchayat , Aminagar Sarai , Baghpat , Uttar Pradesh , 250606
                       </p>
                     </div>
                   </div>
@@ -83,10 +84,10 @@ export default function ContactUs() {
                     <div>
                       <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Phone Number</p>
                       <Link
-                        href="tel:+911212222040"
+                        href="tel:+918189077892"
                         className="text-xs font-black text-slate-700 mt-0.5 block hover:underline"
                       >
-                        +91 121-2222040
+                        +91 8189077892
                       </Link>
                     </div>
                   </div>
@@ -99,10 +100,10 @@ export default function ContactUs() {
                     <div>
                       <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Email Address</p>
                       <Link
-                        href="mailto:info@baghpatnagarpalika.in"
+                        href="mailto:npasarai@gmail.com"
                         className="text-xs font-black text-slate-700 mt-0.5 block hover:underline"
                       >
-                        info@baghpatnagarpalika.in
+                       npasarai@gmail.com
                       </Link>
                     </div>
                   </div>
