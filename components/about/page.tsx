@@ -62,18 +62,6 @@ function OfficerRow({ data }: { data: OfficerRowProps }) {
           <h3 className="text-lg font-black text-gov-blue-dark tracking-tight leading-tight">{data.name}</h3>
           <p className="text-xs font-bold text-gov-saffron uppercase tracking-widest mt-1">{data.designation}</p>
           <p className="text-[10px] text-slate-400 font-semibold mt-0.5">{data.subText}</p>
-
-          {/* Quick stats / terms */}
-          <div className="mt-4 pt-4 border-t border-slate-50 grid grid-cols-2 gap-2 text-left">
-            <div className="bg-slate-50 p-2 rounded-lg text-center">
-              <span className="text-[9px] text-slate-400 font-bold block">TERM / STATUS</span>
-              <span className="text-xs font-extrabold text-gov-blue-dark block truncate">{data.term}</span>
-            </div>
-            <div className="bg-slate-50 p-2 rounded-lg text-center">
-              <span className="text-[9px] text-slate-400 font-bold block">RESPONSIBILITY</span>
-              <span className="text-xs font-extrabold text-gov-blue-dark block truncate">{data.status}</span>
-            </div>
-          </div>
         </m.div>
       </div>
 
@@ -170,7 +158,7 @@ function OfficerRow({ data }: { data: OfficerRowProps }) {
               <span>Office Address: Main Bazar, Town Panchayat, Aminagar Sarai, Baghpat, UP - 250606</span>
             </div>
             <div className="text-right sm:border-l sm:border-slate-200 sm:pl-4">
-              <p className="text-gov-blue-dark">Town Panchayat , Aminagar Sarai , Baghpat </p>
+              <p className="text-gov-blue-dark">Town Panchayat , Aminagar Sarai </p>
               <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">
                 Government Registry Approved
               </p>
@@ -192,17 +180,17 @@ export default function AboutUs() {
       name: 'Smt. Sunita Mailk',
       subText: 'Town Panchayat, Aminagar Sarai, Baghpat',
       imgSrc: '  ',
-      term: '2023 - Present',
-      status: '11 Wards Admin',
+      term: '',
+      status: '',
       welcomeQuote:
-        'Dear citizens of Baghpat, we are dedicated to transforming our historic municipality into a benchmark of modern urban governance.',
+        'Dear citizens of Town Panchayat , Aminagar Sarai ,Baghpat, we are dedicated to transforming our historic town panchayat into a benchmark of modern urban governance.',
       welcomeText1:
         'Our vision is built around providing clean, automated, and hassle-free civic infrastructure. With the introduction of our unified digital desk, we want every citizen to obtain birth certificates, submit building layouts, and pay municipal taxes from their phones.',
       welcomeText2:
-        'We urge all residents to active participate in the Swachh Bharat campaigns. A clean town promotes healthy families. Together, we can make Baghpat Nagar Palika Parishad an exemplary smart town in Western Uttar Pradesh.',
+        'We urge all residents to active participate in the Swachh Bharat campaigns. A clean town promotes healthy families. Together, we can make  Town Panchayat , Aminagar Sarai, Baghpat an exemplary smart town in Western Uttar Pradesh.',
       visionTitle: 'Vision 2030 Roadmap',
       visionDesc:
-        'Baghpat Nagar Palika aims to establish a carbon-neutral administrative structure by optimizing water conservation, solid waste segregation, and maximizing public solar infrastructures.',
+        'Town Panchayat, Aminagar Sarai, Baghpat aims to establish a carbon-neutral administrative structure by optimizing water conservation, solid waste segregation, and maximizing public solar infrastructures.',
       visionPoints: [
         '100% Door-to-Door dry-wet waste segregation',
         'Fully digitized property registration and GIS mapping',
@@ -210,7 +198,7 @@ export default function AboutUs() {
         'Reconstruction of eco-friendly community parks',
       ],
       missionDesc:
-        'Our immediate mission is to construct responsive municipal desks that solve problems efficiently. We have benchmarked our services to resolve civic complaints under 72 hours.',
+        'Our immediate mission is to construct responsive town panchayat desks that solve problems efficiently. We have benchmarked our services to resolve civic complaints under 72 hours.',
       missionTargets: [
         { title: 'Clean Water', desc: 'Clean tap supply to every household by 2027.' },
         { title: 'Smart Streetlights', desc: 'Automatic LED nodes in all 25 wards.' },
@@ -222,7 +210,7 @@ export default function AboutUs() {
       roleTitle: 'Administrative Head',
       designation: 'Executive Officer (EO)',
       name: 'Smt. Bhawna Singh',
-      subText: 'State Urban Administrative Service',
+      subText: '',
       imgSrc: ' ',
       term: 'Govt. Appointed',
       status: 'Executive Chief',
@@ -231,10 +219,10 @@ export default function AboutUs() {
       welcomeText1:
         'The administration is focused on executing policies smoothly. We are transforming manual record-keeping into a robust digital framework to minimize delays and eliminate bureaucracy.',
       welcomeText2:
-        'Every municipal fund is being streamlined for optimal development. Our officers are working round-the-clock on the ground to monitor sanitation and civil constructions.',
+        'Every Town Panchayat fund is being streamlined for optimal development. Our officers are working round-the-clock on the ground to monitor sanitation and civil constructions.',
       visionTitle: 'Administrative Excellence',
       visionDesc:
-        'To create an agile, paperless municipal administration that serves as a single-window clearance portal for citizens and commercial stakeholders.',
+        'To create an agile, paperless town Panchayat administration that serves as a single-window clearance portal for citizens and commercial stakeholders.',
       visionPoints: [
         '100% Digital file tracking (e-Office systems)',
         'Time-bound citizen service delivery assurance',
@@ -254,7 +242,7 @@ export default function AboutUs() {
       roleTitle: 'Office Superintendent',
       designation: 'Head Clerk',
       name: 'Shri. Ankit Sharma',
-      subText: 'Central Registry & Accounts',
+      subText: '',
       imgSrc: '  ',
       term: 'Senior Administration',
       status: 'Registry In-Charge',
@@ -295,7 +283,7 @@ export default function AboutUs() {
           <span className="text-xs bg-gov-saffron/10 text-gov-saffron px-3 py-1 rounded-full font-bold uppercase tracking-wider border border-gov-saffron/20">
             Leadership & Administration
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gov-blue-dark tracking-tight mt-3 font-serif">
+          <h2 className="text-4xl md:text-3xl font-extrabold text-gov-blue-dark tracking-tight mt-3 font-serif">
             Desk of the Chairman & Administration
           </h2>
           <p className="text-sm text-slate-500 mt-2 font-medium">

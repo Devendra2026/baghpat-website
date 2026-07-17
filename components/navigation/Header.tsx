@@ -75,29 +75,12 @@ export default function Header() {
               <div className="flex items-center justify-center lg:justify-start gap-1.5 mt-0.5 text-xs text-slate-500 font-medium">
                 <span>Baghpat, Uttar Pradesh, India</span>
                 <span className="text-slate-300">•</span>
-                <span className="text-gov-saffron font-semibold italic">"स्वच्छ बागपत, सुंदर बागपत"</span>
+                <span className="text-gov-saffron font-semibold italic">""स्वच्छ अमीनगर सराय, सुंदर अमीनगर सराय।"</span>
               </div>
             </div>
           </div>
-
-          {/* Right Side: Emergency Helpline and Quick Actions */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
-            {/* Emergency Helpline Card */}
-            <Link
-              href="tel:18001804040"
-              className="flex items-center gap-3 bg-red-50 hover:bg-red-100 border border-red-200 rounded-xl p-3 w-full sm:w-auto transition-all shadow-sm group"
-            >
-              <div className="bg-red-500 text-white p-2 rounded-lg group-hover:scale-110 transition-transform animate-pulse">
-                <PhoneCall className="w-5 h-5" />
-              </div>
-              <div>
-                <p className="text-[10px] uppercase font-bold text-red-600 tracking-wider">Emergency Helpline</p>
-                <p className="text-sm text-font-extrabold text-slate-800">1800-180-4040</p>
-              </div>
-            </Link>
-
             {/* Quick Actions Grid */}
-            <div className="grid grid-cols-2 sm:flex items-center gap-2 w-full sm:w-auto">
+            <div className="grid grid-cols-2 sm:flex items-center gap-10 w-full sm:w-auto">
               <Button
                 suppressHydrationWarning
                 onClick={() => setActiveModal('search')}
@@ -117,7 +100,6 @@ export default function Header() {
               </button>
             </div>
           </div>
-        </div>
       </header>
 
       {/* ================================================= */}

@@ -66,8 +66,8 @@ export default function Statistics() {
       color: 'border-gov-saffron/20 bg-gov-saffron/5',
     },
     {
-      label: 'Municipal Wards',
-      labelHi: 'नगर पालिका वार्ड',
+      label: 'Town Panchayat Wards',
+      labelHi: 'नगर पंचायत वार्ड',
       targetValue: 11,
       suffix: '',
       icon: <Landmark className="w-6 h-6 text-gov-blue-medium" />,

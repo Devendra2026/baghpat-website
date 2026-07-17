@@ -22,7 +22,7 @@ export default function ChairmanMessage() {
           <span className="text-xs bg-gov-saffron/10 text-gov-saffron px-3 py-1 rounded-full font-bold uppercase tracking-wider border border-gov-saffron/20">
             Leadership Message
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gov-blue-dark tracking-tight mt-3 font-serif">
+          <h2 className="text-3xl md:text-3xl font-extrabold text-gov-blue-dark tracking-tight mt-3 font-serif">
             Desk of the Chairman & Administration
           </h2>
           <p className="text-sm text-slate-500 mt-2 font-medium">
@@ -63,18 +63,6 @@ export default function ChairmanMessage() {
               <h3 className="text-lg font-black text-gov-blue-dark tracking-tight leading-tight">Smt. Sunita Malik</h3>
               <p className="text-xs font-bold text-gov-saffron uppercase tracking-widest mt-1">Chairman</p>
               <p className="text-[10px] text-slate-400 font-semibold mt-0.5">Town Panchayat , Aminagar Sarai, Baghpat</p>
-
-              {/* Quick stats / terms */}
-              <div className="mt-4 pt-4 border-t border-slate-50 grid grid-cols-2 gap-2 text-left">
-                <div className="bg-slate-50 p-2 rounded-lg text-center">
-                  <span className="text-[9px] text-slate-400 font-bold block">TERM</span>
-                  <span className="text-xs font-extrabold text-gov-blue-dark">2023 - Present</span>
-                </div>
-                <div className="bg-slate-50 p-2 rounded-lg text-center">
-                  <span className="text-[9px] text-slate-400 font-bold block">WARD STATUS</span>
-                  <span className="text-xs font-extrabold text-gov-blue-dark">11 Wards Admin</span>
-                </div>
-              </div>
             </m.div>
           </div>
 
@@ -127,7 +115,7 @@ export default function ChairmanMessage() {
                       <Quote className="w-10 h-10 text-gov-saffron/20 shrink-0 rotate-180" />
                       <div>
                         <p className="text-sm font-bold text-slate-800 italic leading-relaxed">
-                          "Dear citizens of Baghpat, we are dedicated to transforming our historic municipality into a
+                          "Dear citizens of Town Panchayat , Aminagar Sarai, Baghpat we are dedicated to transforming our historic town panchayat into a
                           benchmark of modern urban governance."
                         </p>
                       </div>
@@ -139,7 +127,7 @@ export default function ChairmanMessage() {
                     </p>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
                       We urge all residents to active participate in the Swachh Bharat campaigns. A clean town promotes
-                      healthy families. Together, we can make Baghpat Nagar Palika Parishad an exemplary smart town in
+                      healthy families. Together, we can make Town Panchayat , Aminagar Sarai, Baghpat an exemplary smart town in
                       Western Uttar Pradesh.
                     </p>
                   </m.div>
@@ -152,7 +140,7 @@ export default function ChairmanMessage() {
                       <h4 className="text-sm font-bold uppercase tracking-wide">Vision 2030 Roadmap</h4>
                     </div>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                      Baghpat Nagar Palika aims to establish a carbon-neutral administrative structure by optimizing
+                       Town Panchayat , Aminagar Sarai, Baghpat  aims to establish a carbon-neutral administrative structure by optimizing
                       water conservation, solid waste segregation, and maximizing public solar infrastructures.
                     </p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
@@ -178,7 +166,7 @@ export default function ChairmanMessage() {
                       <h4 className="text-sm font-bold uppercase tracking-wide">Actionable Targets</h4>
                     </div>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                      Our immediate mission is to construct responsive municipal desks that solve problems efficiently.
+                      Our immediate mission is to construct responsive Town Panchayat desks that solve problems efficiently.
                       We have benchmarked our services to resolve civic complaints under 72 hours.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
@@ -201,10 +189,10 @@ export default function ChairmanMessage() {
               <div className="border-t border-slate-100 pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs font-bold text-slate-500">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-gov-saffron" />
-                  <span>Office Address: Main Town Hall, Baghpat, UP - 250609</span>
+                  <span>Office Address: Main Bazar,Town Panchayat , Aminagar Sarai, Baghpat, UP - 250606</span>
                 </div>
                 <div className="text-right sm:border-l sm:border-slate-200 sm:pl-4">
-                  <p className="text-gov-blue-dark">Town Panchayat , Aminagar Sarai, Baghpat</p>
+                  <p className="text-gov-blue-dark">Town Panchayat , Aminagar Sarai, </p>
                   <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">
                     Government Registry Approved
                   </p>
