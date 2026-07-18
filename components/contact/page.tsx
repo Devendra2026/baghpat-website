@@ -1,11 +1,12 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { AnimatePresence, m } from 'framer-motion';
-import { CheckCircle2, Clock, Mail, MapPin, Phone, Send, ShieldAlert } from 'lucide-react';
+import { m, AnimatePresence, motion } from 'framer-motion';
+import { CheckCircle2, Clock, Mail, MapPin, Phone, Send, ShieldAlert, Navigation } from 'lucide-react';
 import Link from "next/link";
 import React, { useState } from 'react';
 
@@ -24,7 +25,7 @@ export default function ContactUs() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
     setTimeout(() => {
@@ -103,7 +104,7 @@ export default function ContactUs() {
                         href="mailto:npasarai@gmail.com"
                         className="text-xs font-black text-slate-700 mt-0.5 block hover:underline"
                       >
-                       npasarai@gmail.com
+                        npasarai@gmail.com
                       </Link>
                     </div>
                   </div>
@@ -148,7 +149,7 @@ export default function ContactUs() {
 
                 <AnimatePresence mode="wait">
                   {submitted ? (
-                    <m.div
+                    <motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
@@ -160,7 +161,7 @@ export default function ContactUs() {
                         Thank you for reaching out to Town Panchayat, Aminagar Sarai, Baghpat. We have logged your
                         enquiry, and our desk officer will contact you within 24-48 working hours.
                       </p>
-                    </m.div>
+                    </motion.div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -250,6 +251,41 @@ export default function ContactUs() {
             </div>
           </div>
         </div>
+
+        {/* 🗺️ Interactive Google Maps Section */}
+        <div className="bg-white rounded-3xl border border-slate-100 shadow-xl overflow-hidden p-6 md:p-8 space-y-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+              <h2 className="text-xl font-extrabold text-gov-blue-dark tracking-tight font-serif">
+                Find Us on Google Maps
+              </h2>
+              <p className="text-xs text-slate-400 font-semibold">
+                Navigate directly to Town Panchayat Office, Aminagar Sarai.
+              </p>
+            </div>
+            <Link 
+              href="https://maps.app.goo.gl/8gvd4g4qdTn9u81X9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs px-4 py-2 rounded-xl border border-slate-200 transition-all shrink-0"
+            >
+              <Navigation className="w-3.5 h-3.5 text-blue-600 animate-pulse" />
+              <span>Open in Google Maps App</span>
+            </Link>
+          </div>
+          
+          <div className="w-full h-[380px] rounded-2xl overflow-hidden border border-slate-100 relative group">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.5640306169524!2d77.28424227632616!3d28.94090597549929!2m3!1f0!2f0!3f0!3m2!1i1025!2i768!4f13.1!3m3!1m2!1s0x390da256c5aa5a05%3A0xc3286f78f6bf7e55!2sNagar%20Panchayat%20Office%2C%20Aminagar%20Sarai!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+              className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-500"
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Nagar Panchayat Aminagar Sarai Location Map"
+            />
+          </div>
+        </div>
+
       </div>
     </div>
   );

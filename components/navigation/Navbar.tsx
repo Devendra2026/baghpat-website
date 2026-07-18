@@ -45,33 +45,21 @@ export default function Navbar() {
     else if (pathname === '/departments') setActiveTab('Departments');
     else if (pathname === '/services') setActiveTab('Services');
     else if (pathname === '/newsandnotice') setActiveTab('NewsAndNotice');
+    else if (pathname === '/propertytax') setActiveTab('Property Tax');
     else setActiveTab('Home');
   }, [pathname]);
 
   const menuItems: MenuItem[] = [
     { name: "Home", href: "/", hasDropdown: false },
-    { name: "About Us", href: "/about", hasDropdown: false },
-    {
-      name: "Departments",
-      href: "/departments",
-      hasDropdown: false,
-      megaMenuType: "departments",
-    },
-    {
-      name: "Our Services",
-      href: "/services",
-      hasDropdown: true,
-      megaMenuType: "services",
-    },
+    { name: "About Us", href: "/about", hasDropdown: false ,},
+    {name: "Departments",href: "/departments",hasDropdown: false,megaMenuType: "departments",},
+    { name: "Our Services", href: "/services",hasDropdown: true,megaMenuType: "services",},
     { name: "Public Grievance", href: "/public-grievance", hasDropdown: false },
-    {
-      name: "Schemes",
-      href: "/schemes",
-      hasDropdown: false,
-    },
+    {name: "Schemes",href: "/schemes",hasDropdown: false,},
     { name: "News And Notice", href: "/newsandnotice", hasDropdown: false },
     { name: "Gallery", href: "/gallery", hasDropdown: false },
     { name: "Contact Us", href: "/contact", hasDropdown: false },
+    { name: "Property Tax", href: "/propertytax", hasDropdown: false },
     
   ];
 
@@ -138,10 +126,11 @@ export default function Navbar() {
             scrolled ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none w-0 overflow-hidden"
           }`}
         >
-          <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="48" stroke="#FF9933" strokeWidth="4" fill="#0A2540" />
-            <path d="M35 50 L65 50 M50 35 L50 65" stroke="#FFFFFF" strokeWidth="4" />
-          </svg>
+          <img 
+              src="https://cdn.s3waas.gov.in/s30336dcbab05b9d5ad24f4333c7658a0e/uploads/2018/02/2018021632.png" 
+              alt="Government Emblem" 
+              className="w-12 h-12 shrink-0 object-contain bg-white rounded-full p-1"
+            />
           <div className="leading-none text-left">
             <span className="text-[10px] text-gov-saffron uppercase font-bold block">Baghpat Portal</span>
             <span className="text-xs font-extrabold uppercase tracking-wide block"> Town Panchayat,Aminagar Sarai, Baghpat</span>
@@ -200,7 +189,7 @@ export default function Navbar() {
                             {item.name} gateway
                           </h4>
                           <p className="text-xs text-slate-200 leading-relaxed">
-                            Baghpat Administrative services are unified online. Browse details, download documents, and apply securely.
+                           Town Panchayat, Aminagar Sarai,  Baghpat Administrative services are unified online. Browse details, download documents, and apply securely.
                           </p>
                         </div>
                         <div className="text-[10px] text-slate-300 font-bold uppercase tracking-widest border-t border-white/10 pt-4 mt-4">

@@ -354,7 +354,7 @@ export default function Services() {
                             Ward Number / Business Location
                           </label>
                           <select className="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs focus:outline-gov-blue-medium font-semibold bg-white">
-                            {Array.from({ length: 25 }, (_, i) => (
+                            {Array.from({ length: 11 }, (_, i) => (
                               <option key={i + 1}>Ward No. {i + 1}</option>
                             ))}
                           </select>

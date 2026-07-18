@@ -15,11 +15,13 @@ export default function Footer() {
         
         {/* Col 1: Brand & Bio */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <svg className="w-8 h-8 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="48" stroke="#FF9933" strokeWidth="4" fill="#0A2540" />
-              <path d="M35 50 L65 50 M50 35 L50 65" stroke="#FFFFFF" strokeWidth="4" />
-            </svg>
+          <div className="flex items-center gap-3">
+            {/* government logo */}
+            <img 
+              src="https://cdn.s3waas.gov.in/s30336dcbab05b9d5ad24f4333c7658a0e/uploads/2018/02/2018021632.png" 
+              alt="Government Emblem" 
+              className="w-12 h-12 shrink-0 object-contain bg-white rounded-full p-1"
+            />
             <div className="leading-none text-white">
               <h3 className="text-sm font-extrabold uppercase tracking-wider"> Town Panchayat, Aminagar Sarai, Baghpat </h3>
               <p className="text-[10px] text-gov-saffron font-bold uppercase mt-0.5">Panchayat Administration</p>
