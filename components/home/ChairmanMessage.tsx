@@ -62,7 +62,7 @@ export default function ChairmanMessage() {
               {/* Name Details */}
               <h3 className="text-lg font-black text-gov-blue-dark tracking-tight leading-tight">Smt. Sunita Malik</h3>
               <p className="text-xs font-bold text-gov-saffron uppercase tracking-widest mt-1">Chairman</p>
-              <p className="text-[10px] text-slate-400 font-semibold mt-0.5">Town Panchayat , Aminagar Sarai, Baghpat</p>
+              <p className="text-[10px] text-slate-400 font-semibold mt-0.5">नगर पंचायत, अमीनगर सराय</p>
             </m.div>
           </div>
 
@@ -115,20 +115,15 @@ export default function ChairmanMessage() {
                       <Quote className="w-10 h-10 text-gov-saffron/20 shrink-0 rotate-180" />
                       <div>
                         <p className="text-sm font-bold text-slate-800 italic leading-relaxed">
-                          "Dear citizens of Town Panchayat , Aminagar Sarai, Baghpat we are dedicated to transforming our historic town panchayat into a
-                          benchmark of modern urban governance."
+                         "अमीनगर सराय: विरासत को सहेजते, भविष्य को संवारते"
                         </p>
                       </div>
                     </div>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                      Our vision is built around providing clean, automated, and hassle-free civic infrastructure. With
-                      the introduction of our unified digital desk, we want every citizen to obtain birth certificates,
-                      submit building layouts, and pay municipal taxes from their phones.
+                     'हमारा नगर पंचायत प्रशासन पूरी पारदर्शिता, ईमानदारी और जन-भागीदारी के साथ काम करने के लिए प्रतिबद्ध है। हमारी यह यात्रा आप सभी के सहयोग और विश्वास के बिना अधूरी है। हम मिलकर एक ऐसा अमीनगर सराय बनाएंगे जो न केवल स्वच्छ और हरा-भरा हो, बल्कि जहाँ हर नागरिक को सुविधाएँ और सम्मान मिले।'
                     </p>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                      We urge all residents to active participate in the Swachh Bharat campaigns. A clean town promotes
-                      healthy families. Together, we can make Town Panchayat , Aminagar Sarai, Baghpat an exemplary smart town in
-                      Western Uttar Pradesh.
+                   'अमीनगर सराय का इतिहास और इसकी गौरवशाली पहचान—मेरठ कमिष्णरी क्षेत्र के सबसे पुराने शहर के रूप में—हम सभी निवासियों के लिए गर्व का विषय है। एक जन-प्रतिनिधि के रूप में, मेरा प्रयास रहा है कि हम न केवल अपनी समृद्ध विरासत को सुरक्षित रखें, बल्कि आधुनिक विकास के पथ पर भी उतनी ही तेजी से आगे बढ़ें।'
                     </p>
                   </m.div>
                 )}
@@ -140,15 +135,14 @@ export default function ChairmanMessage() {
                       <h4 className="text-sm font-bold uppercase tracking-wide">Vision 2030 Roadmap</h4>
                     </div>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                       Town Panchayat , Aminagar Sarai, Baghpat  aims to establish a carbon-neutral administrative structure by optimizing
-                      water conservation, solid waste segregation, and maximizing public solar infrastructures.
+                      'हमारा विजन एक ऐसे आदर्श नगर पंचायत का निर्माण करना है जो आत्मनिर्भर, प्रगतिशील और आधुनिक हो।'
                     </p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
                       {[
-                        '100% Door-to-Door dry-wet waste segregation',
-                        'Fully digitized property registration and GIS mapping',
-                        'High speed Wi-Fi nodes in main marketplaces',
-                        'Reconstruction of eco-friendly community parks',
+                         'समावेशी विकास: सभी नागरिकों को विकास की मुख्यधारा से जोड़ना।',
+                         'ऐतिहासिक गौरव और आधुनिकता का संतुलन बनाए रखना।',
+                         'सतत और हरित भविष्य: पर्यावरण के अनुकूल विकास मॉडल अपनाना।',
+                         'आने वाली पीढ़ियों के लिए स्वच्छ और सुरक्षित वातावरण तैयार करना।',
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-center gap-2 text-xs text-slate-600 font-bold">
                           <Award className="w-4 h-4 text-gov-saffron shrink-0" />
@@ -166,14 +160,13 @@ export default function ChairmanMessage() {
                       <h4 className="text-sm font-bold uppercase tracking-wide">Actionable Targets</h4>
                     </div>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                      Our immediate mission is to construct responsive Town Panchayat desks that solve problems efficiently.
-                      We have benchmarked our services to resolve civic complaints under 72 hours.
+                      'हमारा मिशन जमीनी स्तर पर उन सुधारों को लागू करना है जो नागरिकों के दैनिक जीवन को सरल और बेहतर बनाते हैं।',
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
                       {[
-                        { title: 'Clean Water', desc: 'Clean tap supply to every household by 2027.' },
-                        { title: 'Smart Streetlights', desc: 'Automatic LED nodes in all 25 wards.' },
-                        { title: 'Smooth Roadways', desc: 'No pothole policy with concrete repairs.' },
+                       { title: 'बुनियादी सुविधाएँ', desc: '24/7 सुरक्षित पेयजल, सुव्यवस्थित जल निकासी और हर गली में स्ट्रीट लाइट।' },
+                       { title: 'स्वच्छता एवं पर्यावरण', desc: 'वैज्ञानिकी कचरा प्रबंधन के साथ "स्वच्छ अमीनगर, हरित अमीनगर" का लक्ष्य।' },
+                       { title: 'डिजिटल गवर्नेंस', desc: 'नगर पंचायत की सेवाओं को ऑनलाइन और पारदर्शी बनाकर जन-भागीदारी बढ़ाना।' }, 
                       ].map((item) => (
                         <div key={item.title} className="bg-slate-50 p-3 rounded-lg border border-slate-100">
                           <h5 className="text-xs font-black text-gov-blue-medium">{item.title}</h5>
@@ -189,12 +182,12 @@ export default function ChairmanMessage() {
               <div className="border-t border-slate-100 pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs font-bold text-slate-500">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-gov-saffron" />
-                  <span>Office Address: Main Bazar,Town Panchayat , Aminagar Sarai, Baghpat, UP - 250606</span>
+                  <span>कार्यालय का पता: मुख्य बाजार, नगर पंचायत, अमीनगर सराय, बागपत, UP - 250606</span>
                 </div>
                 <div className="text-right sm:border-l sm:border-slate-200 sm:pl-4">
-                  <p className="text-gov-blue-dark">Town Panchayat , Aminagar Sarai, </p>
+                  <p className="text-gov-blue-dark">नगर पंचायत, अमीनगर सराय </p>
                   <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">
-                    Government Registry Approved
+                      सरकारी पंजीकरण स्वीकृत
                   </p>
                 </div>
               </div>

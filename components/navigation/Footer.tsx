@@ -39,12 +39,12 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2.5 text-xs font-semibold">
             {[
-              { name: "About Baghpat City", href: "#about-us" },
-              { name: "Executive Committee Members", href: "#about-us" },
-              { name: "Online Citizen Charter", href: "#about-us" },
-              { name: "Tenders & Proposals", href: "#news-notices" },
-              { name: "Official Recruitment portal", href: "#news-notices" },
-              { name: "Terms & Conditions Disclaimer", href: "#" },
+              { name: "About Baghpat City", href: "/about" },
+              { name: "Executive Committee Members", href: "/staff" },
+              { name: "Departments", href: "/departments" },
+              { name: "Tenders & Proposals", href: "/newsandnotice" },
+              { name: "Gallery", href: "/gallery" },
+              { name: "Contact-Us", href: "/contact" },
             ].map((link) => (
               <li key={link.name}>
                 <a href={link.href} className="hover:text-gov-saffron hover:underline transition-colors flex items-center gap-1.5">
@@ -63,12 +63,12 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2.5 text-xs font-semibold">
             {[
-              { name: "Property & House Tax Portal", href: "#citizen-services" },
-              { name: "Water Supply Bills & NOC", href: "#citizen-services" },
-              { name: "Birth Certificate Applications", href: "#citizen-services" },
-              { name: "Death Record Verification", href: "#citizen-services" },
-              { name: "Shop / Trade Licenses desk", href: "#citizen-services" },
-              { name: "Building Permission NOC portal", href: "#citizen-services" },
+              { name: "Property & House Tax Portal", href: "/propertytax" },
+              { name: "Water Supply Bills & NOC", href: "/services" },
+              { name: "Birth Certificate Applications", href: "/services" },
+              { name: "Death Record Verification", href: "/services" },
+              { name: "Shop / Trade Licenses desk", href: "/services" },
+              { name: "Building Permission NOC portal", href: "/services" },
             ].map((link) => (
               <li key={link.name}>
                 <a href={link.href} className="hover:text-gov-saffron hover:underline transition-colors flex items-center gap-1.5">

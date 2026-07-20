@@ -46,6 +46,7 @@ export default function Navbar() {
     else if (pathname === '/services') setActiveTab('Services');
     else if (pathname === '/newsandnotice') setActiveTab('NewsAndNotice');
     else if (pathname === '/propertytax') setActiveTab('Property Tax');
+    else if (pathname === '/staff') setActiveTab('Staff');
     else setActiveTab('Home');
   }, [pathname]);
 
@@ -58,6 +59,7 @@ export default function Navbar() {
     {name: "Schemes",href: "/schemes",hasDropdown: false,},
     { name: "News And Notice", href: "/newsandnotice", hasDropdown: false },
     { name: "Gallery", href: "/gallery", hasDropdown: false },
+    { name: "Staff", href:"/staff", hasDropdown: false },
     { name: "Contact Us", href: "/contact", hasDropdown: false },
     { name: "Property Tax", href: "/propertytax", hasDropdown: false },
     
