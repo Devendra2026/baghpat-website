@@ -1,20 +1,20 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
+import { useAuth } from "@/hooks/use-auth";
 import {
-  useMutation,
-  useQuery,
-  useQueryClient,
+    useMutation,
+    useQuery,
+    useQueryClient,
 } from "@tanstack/react-query";
 
-import { CreateContactData } from "@/types/contact";
 import {
-  createContact,
-  deleteContact,
-  getAllContacts,
-  getContactById,
-  updateContact,
+    createContact,
+    deleteContact,
+    getAllContacts,
+    getContactById,
+    updateContact,
 } from "@/services/contact-api";
+import { CreateContactData } from "@/types/contact";
 
 export const contactQueryKeys = {
   all: ["contacts"] as const,

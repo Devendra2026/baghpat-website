@@ -1,16 +1,14 @@
 
 'use client';
 
-import { SignInButton, SignUpButton, UserButton, useUser } from '@clerk/nextjs';
-import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import { LayoutDashboard, LogIn, Search, Shield, UserPlus, X } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import React, { useState } from 'react';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 
 export default function Header() {
-  const { isSignedIn } = useUser();
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -74,51 +72,29 @@ export default function Header() {
               <Search className="w-4 h-4" />
             </Button>
 
-            {isSignedIn ? (
-              <div className="flex items-center justify-end gap-3">
-                <Link
-                  href="/auth/role-check"
-                  className="flex items-center gap-1.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-800"
-                >
-                  <LayoutDashboard className="h-4 w-4" />
-                  <span>Dashboard</span>
-                </Link>
-                <UserButton />
-              </div>
-            ) : (
-              <div className="flex items-center justify-end gap-2">
-                <SignInButton
-                  mode="modal"
-                  forceRedirectUrl="/auth/role-check"
-                  fallbackRedirectUrl="/auth/role-check"
-                  signUpForceRedirectUrl="/"
-                  signUpFallbackRedirectUrl="/"
-                >
-                  <button
-                    type="button"
-                    className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-100"
-                  >
-                    <LogIn className="h-4 w-4" />
-                    <span>Sign In</span>
-                  </button>
-                </SignInButton>
-                <SignUpButton
-                  mode="modal"
-                  forceRedirectUrl="/"
-                  fallbackRedirectUrl="/"
-                  signInForceRedirectUrl="/auth/role-check"
-                  signInFallbackRedirectUrl="/auth/role-check"
-                >
-                  <button
-                    type="button"
-                    className="flex items-center gap-1.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-800"
-                  >
-                    <UserPlus className="h-4 w-4" />
-                    <span>Sign Up</span>
-                  </button>
-                </SignUpButton>
-              </div>
-            )}
+            <div className="flex items-center justify-end gap-3">
+              {/* <Link
+                href="/auth/role-check"
+                className="flex items-center gap-1.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-800"
+              >
+                <LayoutDashboard className="h-4 w-4" />
+                <span>Dashboard</span>
+              </Link> */}
+              {/* <Link
+                href="/sign-in"
+                className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-100"
+              >
+                <LogIn className="h-4 w-4" />
+                <span>Sign In</span>
+              </Link> */}
+              <Link
+                href="/sign-up"
+                className="flex items-center gap-1.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-800"
+              >
+                <UserPlus className="h-4 w-4" />
+                <span>Sign Up</span>
+              </Link>
+            </div>
           </div>
         </div>
       </header>

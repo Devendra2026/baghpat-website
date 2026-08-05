@@ -37,7 +37,7 @@ export default function AdminSignupUsersPage() {
               </h1>
 
               <p className="mt-1 text-sm text-slate-500">
-                View users captured from Clerk signup webhook.
+                View users registered through the custom signup flow.
               </p>
             </div>
           </div>

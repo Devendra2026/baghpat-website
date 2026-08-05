@@ -21,7 +21,6 @@ export type AdminPermissionKey =
 
 export type AdminAccess = {
   id: number | null;
-  clerkId: string;
   name: string;
   email: string;
   role: string | null;

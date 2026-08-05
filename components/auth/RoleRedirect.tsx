@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
-import { useAuth } from "@clerk/nextjs";
+import { useAuth } from "@/hooks/use-auth";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 import { getCurrentAdminRole } from "@/services/admin-role-api";
 

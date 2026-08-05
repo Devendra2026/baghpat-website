@@ -435,10 +435,6 @@ export async function getCurrentAdminRole(
 
   return {
     id: extractUserId(response),
-    clerkId: extractUserField(response, [
-      "clerk_id",
-      "clerkId",
-    ]),
     name: extractUserField(response, ["name"]),
     email: extractUserField(response, ["email"]),
     role,

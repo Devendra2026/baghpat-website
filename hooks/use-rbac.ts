@@ -1,26 +1,26 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
+import { useAuth } from "@/hooks/use-auth";
 import {
-  useMutation,
-  useQuery,
-  useQueryClient,
+    useMutation,
+    useQuery,
+    useQueryClient,
 } from "@tanstack/react-query";
 
 import {
-  createRole,
-  deleteRole,
-  getPermissions,
-  getRoleById,
-  getRoles,
-  updateRole,
-  updateRolePermissions,
+    createRole,
+    deleteRole,
+    getPermissions,
+    getRoleById,
+    getRoles,
+    updateRole,
+    updateRolePermissions,
 } from "@/services/rbac-api";
 import type {
-  Role,
-  RoleCreateData,
-  RolePermissionsUpdateData,
-  RoleUpdateData,
+    Role,
+    RoleCreateData,
+    RolePermissionsUpdateData,
+    RoleUpdateData,
 } from "@/types/rbac";
 
 export const rbacQueryKeys = {

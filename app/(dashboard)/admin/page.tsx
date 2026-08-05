@@ -78,7 +78,7 @@ export default function AdminDashboardPage() {
             <AdminStatCard
               title="Signup Users"
               value={signupUsers.length}
-              description="Clerk webhook users"
+              description="Custom auth users"
               icon={UsersRound}
               iconClassName="bg-indigo-100 text-indigo-600"
             />
@@ -182,7 +182,7 @@ export default function AdminDashboardPage() {
               </h2>
 
               <p className="mt-2 text-sm leading-6 text-slate-500">
-                View users saved through the Clerk signup webhook.
+                View users saved through the custom signup flow.
               </p>
 
               <p className="mt-5 text-sm font-semibold text-indigo-600">

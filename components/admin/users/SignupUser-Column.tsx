@@ -67,15 +67,6 @@ export function createSignupUserColumns(
         ),
     },
     {
-      accessorKey: "clerk_id",
-      header: "Clerk ID",
-      cell: ({ row }) => (
-        <span className="font-mono text-xs text-slate-700">
-          {row.original.clerk_id}
-        </span>
-      ),
-    },
-    {
       id: "actions",
       header: "Actions",
       cell: ({ row }) => (

@@ -1,8 +1,7 @@
 "use client";
 
-import { UserButton, useUser } from "@clerk/nextjs";
 import {
-  Bell,
+    Bell,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -25,13 +24,9 @@ function formatRoleLabel(
 }
 
 export default function AdminHeader() {
-  const { user } = useUser();
   const { access, isLoading } = useAdminAccess();
 
-  const displayName =
-    user?.fullName ??
-    user?.primaryEmailAddress?.emailAddress ??
-    "Admin User";
+  const displayName = "Admin User";
   const roleLabel = isLoading
     ? "Checking role..."
     : formatRoleLabel(access?.role);
@@ -61,7 +56,6 @@ export default function AdminHeader() {
           </Button>
 
           <div className="flex items-center gap-3 rounded-xl border border-slate-200 px-3 py-2">
-            <UserButton />
             <div className="hidden sm:block">
               <p className="text-sm font-semibold text-blue-900">
                 {displayName}

@@ -1,18 +1,18 @@
 "use client";
 
-import { useMemo } from "react";
-import { useAuth } from "@clerk/nextjs";
+import { useAuth } from "@/hooks/use-auth";
 import { useQuery } from "@tanstack/react-query";
+import { useMemo } from "react";
 
 import {
-  getCurrentAdminRole,
-  hasAdminPermission,
-  hasEveryAdminPermission,
-  isFullAccessAdminRole,
+    getCurrentAdminRole,
+    hasAdminPermission,
+    hasEveryAdminPermission,
+    isFullAccessAdminRole,
 } from "@/services/admin-role-api";
 import type {
-  AdminAccess,
-  AdminPermissionKey,
+    AdminAccess,
+    AdminPermissionKey,
 } from "@/types/admin-access";
 
 export const adminAccessQueryKeys = {

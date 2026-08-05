@@ -13,7 +13,6 @@ const apiTextField = z.preprocess(
 
 export const signupUserSchema = z.object({
   id: z.coerce.number().int().positive(),
-  clerk_id: apiTextField,
   name: apiTextField,
   email: apiTextField,
   role: apiTextField,

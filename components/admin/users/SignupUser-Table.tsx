@@ -92,7 +92,7 @@ export default function SignupUserTable({
     <DataTable
       columns={columns}
       data={data}
-      searchPlaceholder="Search by name, email, role or Clerk ID"
+      searchPlaceholder="Search by name, email or role"
       emptyMessage="No signup users found"
     />
   );

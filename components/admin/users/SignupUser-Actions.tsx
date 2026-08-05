@@ -130,7 +130,7 @@ export default function SignupUserActions({
               Signup User #{user.id}
             </DialogTitle>
             <DialogDescription>
-              User captured from the Clerk signup webhook.
+              User registered through the custom signup flow.
             </DialogDescription>
           </DialogHeader>
 
@@ -138,10 +138,6 @@ export default function SignupUserActions({
             <DetailRow
               label="Database ID"
               value={user.id}
-            />
-            <DetailRow
-              label="Clerk ID"
-              value={user.clerk_id}
             />
             <DetailRow
               label="Name"

@@ -1,23 +1,23 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
+import { useAuth } from "@/hooks/use-auth";
 import {
-  useMutation,
-  useQuery,
-  useQueryClient,
+    useMutation,
+    useQuery,
+    useQueryClient,
 } from "@tanstack/react-query";
 
 import type {
-  CreateGrievanceData,
-  Grievance,
+    CreateGrievanceData,
+    Grievance,
 } from "@/types/public-grievance";
 
 import {
-  createGrievance,
-  deleteGrievance,
-  getAllGrievances,
-  getGrievanceById,
-  updateGrievance,
+    createGrievance,
+    deleteGrievance,
+    getAllGrievances,
+    getGrievanceById,
+    updateGrievance,
 } from "@/services/grievance-api";
 
 export const grievanceQueryKeys = {

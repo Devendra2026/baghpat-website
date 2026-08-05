@@ -99,8 +99,8 @@ export async function apiRequest<T>(
   }
 
   /*
-   * Protected GET, PUT aur DELETE APIs ke liye
-   * Clerk token Authorization header me jayega.
+   * Protected APIs ke liye custom auth token
+   * Authorization header me jayega.
    */
   if (token) {
     headers.set(

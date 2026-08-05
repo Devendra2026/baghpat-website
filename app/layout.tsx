@@ -1,4 +1,3 @@
-import { ClerkProvider } from '@clerk/nextjs';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
@@ -21,12 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning className={cn('font-sans', geist.variable)}>
-        <body className="min-h-screen flex flex-col bg-white text-slate-800">
-          <QueryProvider>{children}</QueryProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning className={cn('font-sans', geist.variable)}>
+      <body className="min-h-screen flex flex-col bg-white text-slate-800">
+        <QueryProvider>{children}</QueryProvider>
+      </body>
+    </html>
   );
 }
