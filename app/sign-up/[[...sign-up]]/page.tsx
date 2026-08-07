@@ -3,10 +3,15 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Eye, EyeOff, User, Mail, Lock, ShieldCheck, ArrowRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useSignUp } from '@/hooks/use-auth';
 
 export default function SignUpPage() {
+  const router = useRouter();
+  const signUp = useSignUp();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -19,13 +24,29 @@ export default function SignUpPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage('');
+
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match!');
+      setErrorMessage('Passwords do not match.');
       return;
     }
-    console.log('Signup Form Submitted:', formData);
+
+    try {
+      await signUp.mutateAsync({
+        fullName: formData.fullName,
+        email: formData.email,
+        password: formData.password,
+      });
+      router.replace('/');
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'Sign up failed. Please try again.'
+      );
+    }
   };
 
   return (
@@ -51,6 +72,12 @@ export default function SignUpPage() {
 
         {/* Form Body */}
         <form onSubmit={handleSubmit} className="space-y-4">
+          {errorMessage && (
+            <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+              {errorMessage}
+            </div>
+          )}
+
           {/* Full Name Field */}
           <div>
             <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
@@ -148,9 +175,10 @@ export default function SignUpPage() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-[#006837] hover:bg-[#00522b] text-white font-semibold py-3 rounded-xl transition duration-200 shadow-lg shadow-[#006837]/25 hover:shadow-xl hover:shadow-[#006837]/30 flex items-center justify-center gap-2 group mt-4 cursor-pointer"
+            disabled={signUp.isPending}
+            className="w-full bg-[#006837] hover:bg-[#00522b] disabled:cursor-not-allowed disabled:opacity-70 text-white font-semibold py-3 rounded-xl transition duration-200 shadow-lg shadow-[#006837]/25 hover:shadow-xl hover:shadow-[#006837]/30 flex items-center justify-center gap-2 group mt-4 cursor-pointer"
           >
-            <span>Create Account</span>
+            <span>{signUp.isPending ? 'Creating account...' : 'Create Account'}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition duration-200" />
           </button>
         </form>

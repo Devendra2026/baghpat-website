@@ -2,10 +2,13 @@
 
 import {
     Bell,
+    LogOut,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { useAdminAccess } from "@/hooks/use-admin-access";
+import { useAuth } from "@/hooks/use-auth";
+import { useRouter } from "next/navigation";
 
 function formatRoleLabel(
   role: string | null | undefined
@@ -24,12 +27,19 @@ function formatRoleLabel(
 }
 
 export default function AdminHeader() {
+  const router = useRouter();
+  const { user, logout } = useAuth();
   const { access, isLoading } = useAdminAccess();
 
-  const displayName = "Admin User";
+  const displayName = user?.name || "Admin User";
   const roleLabel = isLoading
     ? "Checking role..."
     : formatRoleLabel(access?.role);
+
+  const handleLogout = async () => {
+    await logout();
+    router.replace("/");
+  };
 
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white">
@@ -65,6 +75,16 @@ export default function AdminHeader() {
               </p>
             </div>
           </div>
+
+          <Button
+            type="button"
+            variant="outline"
+            onClick={handleLogout}
+            className="gap-2 text-slate-600 hover:text-red-600"
+          >
+            <LogOut className="h-4 w-4" />
+            <span className="hidden sm:inline">Logout</span>
+          </Button>
         </div>
       </div>
     </header>

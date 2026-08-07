@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 import './globals.css';
 import QueryProvider from '@/components/providers/query-providers';
+import { AuthProvider } from '@/hooks/use-auth';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={cn('font-sans', geist.variable)}>
       <body className="min-h-screen flex flex-col bg-white text-slate-800">
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          <AuthProvider>{children}</AuthProvider>
+        </QueryProvider>
       </body>
     </html>
   );

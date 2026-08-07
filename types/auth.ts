@@ -4,32 +4,32 @@ import { z } from "zod";
 
 export const userSchema = z.object({
   id: z.union([z.string(), z.number()]),
-  fullName: z.string().min(2, "Full name kam se kam 2 characters ka hona chahiye"),
+  name: z.string().min(2, "Full name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
-  role: z.enum(["admin", "citizen", "staff"]).default("citizen"),
-  status: z.enum(["active", "pending", "suspended"]).default("active"),
-  createdAt: z.string().optional(),
+  role: z.string().default("user"),
+  permissions: z.array(z.string()).default([]),
+  created_at: z.string().optional(),
 });
 
 export const signUpSchema = z.object({
-  fullName: z.string().min(2, "Full name kam se kam 2 characters ka hona chahiye"),
-  email: z.string().email("Sahi email enter karein"),
-  password: z.string().min(6, "Password kam se kam 6 characters ka hona chahiye"),
+  fullName: z.string().min(2, "Full name must be at least 2 characters"),
+  email: z.string().email("Enter a valid email address"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
 });
 
 export const signInSchema = z.object({
-  email: z.string().email("Sahi email enter karein"),
-  password: z.string().min(1, "Password zaroori hai"),
+  email: z.string().email("Enter a valid email address"),
+  password: z.string().min(1, "Password is required"),
 });
 
 export const sendOtpSchema = z.object({
-  email: z.string().email("Sahi email enter karein"),
+  email: z.string().email("Enter a valid email address"),
 });
 
 export const verifyOtpSchema = z.object({
-  email: z.string().email("Sahi email enter karein"),
-  otp: z.string().length(4, "OTP 4 digits ka hona chahiye"),
-  newPassword: z.string().min(6, "Naya password kam se kam 6 characters ka hona chahiye"),
+  email: z.string().email("Enter a valid email address"),
+  otp: z.string().length(4, "OTP must be 4 digits"),
+  newPassword: z.string().min(8, "New password must be at least 8 characters"),
 });
 
 // --- Inferred TypeScript Types ---
@@ -41,10 +41,9 @@ export type SendOtpInput = z.infer<typeof sendOtpSchema>;
 export type VerifyOtpInput = z.infer<typeof verifyOtpSchema>;
 
 export type AuthResponse = {
-  success: boolean;
-  message?: string;
-  token?: string;
-  user?: User;
+  access_token: string;
+  token_type: "bearer";
+  user: User;
 };
 
 export type UsersResponse = {

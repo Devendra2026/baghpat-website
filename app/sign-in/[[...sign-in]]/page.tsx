@@ -3,9 +3,20 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Eye, EyeOff, Mail, Lock, ShieldCheck, ArrowRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useSignIn } from '@/hooks/use-auth';
+
+function isDashboardRole(role: string) {
+  return ["admin", "head clerk", "computer operator"].includes(
+    role.trim().toLowerCase().replace(/[_-]+/g, " ").replace(/\s+/g, " ")
+  );
+}
 
 export default function SignInPage() {
+  const router = useRouter();
+  const signIn = useSignIn();
   const [showPassword, setShowPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -15,9 +26,20 @@ export default function SignInPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Signin Form Submitted:', formData);
+    setErrorMessage('');
+
+    try {
+      const user = await signIn.mutateAsync(formData);
+      router.replace(isDashboardRole(user.role) ? '/dashboard' : '/');
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'Sign in failed. Please try again.'
+      );
+    }
   };
 
   return (
@@ -43,6 +65,12 @@ export default function SignInPage() {
 
         {/* Form Body */}
         <form onSubmit={handleSubmit} className="space-y-4">
+          {errorMessage && (
+            <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+              {errorMessage}
+            </div>
+          )}
+
           {/* Email Field */}
           <div>
             <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
@@ -100,9 +128,10 @@ export default function SignInPage() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-[#006837] hover:bg-[#00522b] text-white font-semibold py-3 rounded-xl transition duration-200 shadow-lg shadow-[#006837]/25 hover:shadow-xl hover:shadow-[#006837]/30 flex items-center justify-center gap-2 group mt-4 cursor-pointer"
+            disabled={signIn.isPending}
+            className="w-full bg-[#006837] hover:bg-[#00522b] disabled:cursor-not-allowed disabled:opacity-70 text-white font-semibold py-3 rounded-xl transition duration-200 shadow-lg shadow-[#006837]/25 hover:shadow-xl hover:shadow-[#006837]/30 flex items-center justify-center gap-2 group mt-4 cursor-pointer"
           >
-            <span>Sign In</span>
+            <span>{signIn.isPending ? 'Signing in...' : 'Sign In'}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition duration-200" />
           </button>
         </form>

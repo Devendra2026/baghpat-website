@@ -109,7 +109,7 @@ export default function AdminDashboardPage() {
           {/* Contact card */}
           {canReadContacts && (
             <Link
-              href="/admin/contacts"
+              href="/dashboard/contacts"
               className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-md"
             >
               <div className="flex items-center justify-between">
@@ -138,7 +138,7 @@ export default function AdminDashboardPage() {
           {/* Grievance card */}
           {canReadGrievances && (
             <Link
-              href="/admin/grievances"
+              href="/dashboard/grievances"
               className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-purple-300 hover:shadow-md"
             >
               <div className="flex items-center justify-between">
@@ -166,7 +166,7 @@ export default function AdminDashboardPage() {
           {/* Signup users card */}
           {canReadUsers && (
             <Link
-              href="/admin/users"
+              href="/dashboard/users"
               className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-indigo-300 hover:shadow-md"
             >
               <div className="flex items-center justify-between">
@@ -194,7 +194,7 @@ export default function AdminDashboardPage() {
           {/* Roles permissions card */}
           {canManageRbac && (
             <Link
-              href="/admin/roles-permissions"
+              href="/dashboard/roles-permissions"
               className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-fuchsia-300 hover:shadow-md"
             >
               <div className="flex items-center justify-between">

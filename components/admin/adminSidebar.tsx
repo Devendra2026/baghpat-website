@@ -21,30 +21,30 @@ import {
 const sidebarLinks = [
   {
     title: "Dashboard",
-    href: "/admin",
+    href: "/dashboard",
     icon: LayoutDashboard,
   },
   {
     title: "Contact Submissions",
-    href: "/admin/contacts",
+    href: "/dashboard/contacts",
     icon: MessageSquareText,
     permissions: [AdminPermission.ContactsRead],
   },
   {
     title: "Public Grievances",
-    href: "/admin/grievances",
+    href: "/dashboard/grievances",
     icon: TriangleAlert,
     permissions: [AdminPermission.GrievancesRead],
   },
   {
     title: "Signup Users",
-    href: "/admin/users",
+    href: "/dashboard/users",
     icon: UsersRound,
     permissions: [AdminPermission.UsersRead],
   },
   {
     title: "Roles & Permissions",
-    href: "/admin/roles-permissions",
+    href: "/dashboard/roles-permissions",
     icon: KeyRound,
     permissions: [
       AdminPermission.RolesRead,
@@ -67,20 +67,20 @@ export default function AdminSidebar() {
         return true;
       }
 
-      if (link.href === "/admin/contacts") {
+      if (link.href === "/dashboard/contacts") {
         return moduleAccess.canReadContacts;
       }
 
-      if (link.href === "/admin/grievances") {
+      if (link.href === "/dashboard/grievances") {
         return moduleAccess.canReadGrievances;
       }
 
-      if (link.href === "/admin/users") {
+      if (link.href === "/dashboard/users") {
         return moduleAccess.canReadUsers;
       }
 
       if (
-        link.href === "/admin/roles-permissions"
+        link.href === "/dashboard/roles-permissions"
       ) {
         return moduleAccess.canManageRbac;
       }
@@ -90,7 +90,7 @@ export default function AdminSidebar() {
   );
 
   return (
-    <aside className="hidden min-h-screen w-64 flex-col border-r border-slate-200 bg-white lg:flex">
+    <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col border-r border-slate-200 bg-white lg:flex">
       {/* Logo */}
       <div className="flex h-20 items-center gap-3 border-b border-slate-200 px-5">
       <img
@@ -116,8 +116,8 @@ export default function AdminSidebar() {
           const Icon = link.icon;
 
           const isActive =
-            link.href === "/admin"
-              ? pathname === "/admin"
+            link.href === "/dashboard"
+              ? pathname === "/dashboard"
               : pathname.startsWith(link.href);
 
           return (

@@ -1,85 +1,90 @@
 "use client";
 
-import { useAuth } from "@/hooks/use-auth";
-import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 
+import { useAuth } from "@/hooks/use-auth";
 import {
-    getCurrentAdminRole,
-    hasAdminPermission,
-    hasEveryAdminPermission,
-    isFullAccessAdminRole,
+  hasAdminPermission,
+  hasEveryAdminPermission,
+  isAllowedAdminRole,
+  isFullAccessAdminRole,
 } from "@/services/admin-role-api";
 import type {
-    AdminAccess,
-    AdminPermissionKey,
+  AdminAccess,
+  AdminPermissionKey,
 } from "@/types/admin-access";
 
 export const adminAccessQueryKeys = {
   current: ["admin-access", "current"] as const,
 };
 
-async function requireAdminToken(
-  getToken: () => Promise<string | null>
-) {
-  const token = await getToken();
-
-  if (!token) {
-    throw new Error(
-      "Authentication token not found. Please sign in with an admin account."
-    );
-  }
-
-  return token;
-}
-
 export function useAdminAccess() {
   const {
-    getToken,
+    user,
     isLoaded,
     isSignedIn,
+    status,
   } = useAuth();
 
-  const query = useQuery({
-    queryKey: adminAccessQueryKeys.current,
-    queryFn: async () => {
-      const token =
-        await requireAdminToken(getToken);
+  const access = useMemo<
+    AdminAccess | undefined
+  >(() => {
+    if (!isLoaded || !isSignedIn || !user) {
+      return undefined;
+    }
 
-      return getCurrentAdminRole(token);
-    },
-    enabled:
-      isLoaded &&
-      isSignedIn === true,
-    retry: false,
-  });
+    const permissions =
+      user.permissions?.map((permission) =>
+        permission.trim().toLowerCase()
+      ) ?? [];
+
+    return {
+      id:
+        typeof user.id === "number"
+          ? user.id
+          : Number(user.id) || null,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      permissions,
+      hasExplicitPermissions:
+        permissions.length > 0,
+      isAllowed: isAllowedAdminRole(user.role),
+    };
+  }, [isLoaded, isSignedIn, user]);
+
+  const isLoading = status === "loading";
 
   return useMemo(
     () => ({
-      ...query,
-      access: query.data as
-        | AdminAccess
-        | undefined,
+      data: access,
+      access,
+      error: null,
+      isError: false,
+      isSuccess: Boolean(access),
+      isFetching: false,
+      isLoading,
+      refetch: async () => ({ data: access }),
       isPermissionUnknown: Boolean(
-        query.data?.isAllowed &&
-          !query.data.hasExplicitPermissions &&
-          !isFullAccessAdminRole(query.data.role)
+        access?.isAllowed &&
+          !access.hasExplicitPermissions &&
+          !isFullAccessAdminRole(access.role)
       ),
       hasPermission: (
         permission: AdminPermissionKey
       ) =>
         hasAdminPermission(
-          query.data,
+          access,
           permission
         ),
       hasEveryPermission: (
         permissions: AdminPermissionKey[]
       ) =>
         hasEveryAdminPermission(
-          query.data,
+          access,
           permissions
         ),
     }),
-    [query]
+    [access, isLoading]
   );
 }

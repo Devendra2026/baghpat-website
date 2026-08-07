@@ -2,15 +2,24 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { LayoutDashboard, LogIn, Search, Shield, UserPlus, X } from 'lucide-react';
+import { LayoutDashboard, LogIn, LogOut, Search, Shield, UserCircle, X } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
+import { useAuth } from '@/hooks/use-auth';
+import { isAllowedAdminRole } from '@/services/admin-role-api';
 
 export default function Header() {
+  const router = useRouter();
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const { isLoaded, isSignedIn, user, logout } = useAuth();
+  const canOpenDashboard =
+    isLoaded &&
+    isSignedIn &&
+    isAllowedAdminRole(user?.role);
 
   const closeModal = () => {
     setActiveModal(null);
@@ -21,6 +30,11 @@ export default function Header() {
     e.preventDefault();
     alert(`Searching municipal portal for: "${searchQuery}"`);
     closeModal();
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    router.replace('/');
   };
 
   return (
@@ -73,27 +87,45 @@ export default function Header() {
             </Button>
 
             <div className="flex items-center justify-end gap-3">
-              {/* <Link
-                href="/auth/role-check"
+              {canOpenDashboard && (
+                <Link
+                href="/dashboard"
                 className="flex items-center gap-1.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-800"
               >
                 <LayoutDashboard className="h-4 w-4" />
                 <span>Dashboard</span>
-              </Link> */}
-              {/* <Link
+              </Link>
+              )}
+
+              {isSignedIn && (
+                <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm">
+                  <UserCircle className="h-4 w-4 text-blue-700" />
+                  <span className="max-w-32 truncate">
+                    {user?.name || user?.email || 'Signed in'}
+                  </span>
+                </div>
+              )}
+
+              {isSignedIn && (
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="flex cursor-pointer items-center gap-1.5 rounded-lg border border-red-100 bg-red-50 px-4 py-2 text-sm font-medium text-red-700 shadow-sm transition hover:bg-red-100"
+                >
+                  <LogOut className="h-4 w-4" />
+                  <span>Logout</span>
+                </button>
+              )}
+
+              {!isSignedIn && (
+                <Link
                 href="/sign-in"
                 className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-100"
               >
                 <LogIn className="h-4 w-4" />
                 <span>Sign In</span>
-              </Link> */}
-              <Link
-                href="/sign-up"
-                className="flex items-center gap-1.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-800"
-              >
-                <UserPlus className="h-4 w-4" />
-                <span>Sign Up</span>
               </Link>
+              )}
             </div>
           </div>
         </div>
@@ -154,4 +186,3 @@ export default function Header() {
     </>
   );
 }
-

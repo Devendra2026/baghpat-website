@@ -5,14 +5,14 @@ import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-import { getCurrentAdminRole } from "@/services/admin-role-api";
+import { isAllowedAdminRole } from "@/services/admin-role-api";
 
 export default function RoleRedirect() {
   const router = useRouter();
   const {
-    getToken,
     isLoaded,
     isSignedIn,
+    user,
   } = useAuth();
 
   useEffect(() => {
@@ -28,33 +28,16 @@ export default function RoleRedirect() {
         return;
       }
 
-      try {
-        const token = await getToken();
-
-        if (!token) {
-          throw new Error(
-            "Authentication token nahi mila"
-          );
-        }
-
-        const roleCheck =
-          await getCurrentAdminRole(token);
-
-        if (!isActive) {
-          return;
-        }
-
-        if (roleCheck.isAllowed) {
-          router.replace("/admin");
-          return;
-        }
-
-        router.replace("/");
-      } catch (error) {
-        if (isActive) {
-          router.replace("/");
-        }
+      if (!isActive) {
+        return;
       }
+
+      if (isAllowedAdminRole(user?.role)) {
+        router.replace("/dashboard");
+        return;
+      }
+
+      router.replace("/");
     }
 
     void checkRole();
@@ -62,7 +45,7 @@ export default function RoleRedirect() {
     return () => {
       isActive = false;
     };
-  }, [getToken, isLoaded, isSignedIn, router]);
+  }, [isLoaded, isSignedIn, router, user?.role]);
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12">

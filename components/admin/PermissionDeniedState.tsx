@@ -20,7 +20,7 @@ export default function PermissionDeniedState({
         {description}
       </p>
       <Link
-        href="/admin"
+        href="/dashboard"
         className="mt-5 inline-flex h-10 items-center justify-center rounded-lg bg-amber-600 px-4 text-sm font-semibold text-white transition hover:bg-amber-700"
       >
         Dashboard
