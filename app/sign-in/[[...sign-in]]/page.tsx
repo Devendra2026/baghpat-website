@@ -27,11 +27,17 @@ export default function SignInPage() {
   const onSubmit = async (data: SignInInput) => {
     setErrorMessage('');
     try {
-      await signIn.mutateAsync({
+      const response = await signIn.mutateAsync({
         email: data.email,
         password: data.password,
       });
-      router.replace('/');
+
+      if (response.role !== 'user') {
+        router.replace('/dashboard');
+      } else {
+        router.replace('/');
+      }
+
     } catch (error) {
       setErrorMessage(
         error instanceof Error ? error.message : 'Invalid email or password.'
