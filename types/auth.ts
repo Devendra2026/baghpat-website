@@ -15,6 +15,7 @@ export const signUpSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   email: z.string().email("Enter a valid email address"),
   password: z.string().min(8, "Password must be at least 8 characters"),
+  confirmPassword: z.string().min(8, "Password must be at least 8 characters"),
 });
 
 export const signInSchema = z.object({
@@ -27,10 +28,13 @@ export const sendOtpSchema = z.object({
 });
 
 export const verifyOtpSchema = z.object({
-  email: z.string().email("Enter a valid email address"),
   otp: z.string().length(4, "OTP must be 4 digits"),
-  newPassword: z.string().min(8, "New password must be at least 8 characters"),
 });
+
+export const resetPasswdSchema = z.object({
+  newPassword: z.string().min(8, "New password must be at least 8 characters"),
+  confirmNewPassword: z.string().min(8, "New password must be at least 8 characters"),
+})
 
 // --- Inferred TypeScript Types ---
 
@@ -39,6 +43,7 @@ export type SignUpInput = z.infer<typeof signUpSchema>;
 export type SignInInput = z.infer<typeof signInSchema>;
 export type SendOtpInput = z.infer<typeof sendOtpSchema>;
 export type VerifyOtpInput = z.infer<typeof verifyOtpSchema>;
+export type ResetPasswdInput = z.infer<typeof resetPasswdSchema>
 
 export type AuthResponse = {
   access_token: string;

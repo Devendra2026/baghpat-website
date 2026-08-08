@@ -3,6 +3,7 @@ import {
   SignInInput,
   SendOtpInput,
   VerifyOtpInput,
+  ResetPasswdInput,
   AuthResponse,
   UsersResponse,
 } from "@/types/auth";
@@ -95,8 +96,19 @@ export const authService = {
     return res.json();
   },
 
-  async verifyOtpAndReset(data: VerifyOtpInput): Promise<AuthResponse> {
-    const res = await fetch(buildApiUrl("/api/auth/forgot-password/verify-reset"), {
+  async verifyOtp(data: VerifyOtpInput): Promise<AuthResponse> {
+    const res = await fetch(buildApiUrl("/api/auth/forgot-password/verify-otp"), {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error(await res.text());
+    return res.json();
+  },
+
+  async resetPasswd(data: ResetPasswdInput): Promise<AuthResponse> {
+    const res = await fetch(buildApiUrl("/api/auth/forgot-password/reset-passwd"), {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

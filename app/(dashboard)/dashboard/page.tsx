@@ -225,11 +225,11 @@ export default function AdminDashboardPage() {
         {!isAccessLoading && !hasDashboardModules && (
           <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 p-6 text-center">
             <h2 className="text-lg font-bold text-amber-900">
-              Koi dashboard module assigned nahi hai
+              please assign at least one module to the role of this account.
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-sm text-amber-700">
-              Is account ke role me contacts, grievances, users, ya roles ki
-              read permission assign karo.
+              assign read permissions for users, grievance, contacts, or roles to the role of this account. 
+              otherwise, you will not be able to access the admin dashboard.
             </p>
           </div>
         )}

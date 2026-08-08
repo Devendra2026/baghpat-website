@@ -45,7 +45,7 @@ export default function AdminRolesPermissionsPage() {
         )}
 
         {!moduleAccess.isLoading && !canManageRbac && (
-          <PermissionDeniedState description="Roles & permissions dekhne ke liye role:read permission assign honi chahiye." />
+          <PermissionDeniedState description="You don't have permission to see roles and their permissions" />
         )}
 
         {!moduleAccess.isLoading && canManageRbac && (

@@ -72,7 +72,7 @@ export default function AdminContactsPage() {
 
         {!isCheckingAccess &&
           !canReadContacts && (
-            <PermissionDeniedState description="Contact submissions dekhne ke liye contact:read permission assign honi chahiye." />
+            <PermissionDeniedState description="You don't have permission to see contacts" />
           )}
 
         {/* Loading State */}

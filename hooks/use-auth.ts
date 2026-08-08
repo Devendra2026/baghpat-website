@@ -24,6 +24,7 @@ import type {
   SignUpInput,
   User,
   VerifyOtpInput,
+  ResetPasswdInput,
 } from "@/types/auth";
 
 type AuthStatus =
@@ -368,10 +369,18 @@ export function useSendOtp() {
   });
 }
 
-export function useVerifyOtpAndReset() {
+export function useVerifyOtp() {
   return useMutation({
     mutationFn: (data: VerifyOtpInput) =>
-      authService.verifyOtpAndReset(data),
+      authService.verifyOtp(data),
+  });
+}
+
+//
+export function useResetPasswd() {
+  return useMutation({
+    mutationFn: (data: ResetPasswdInput) =>
+      authService.resetPasswd(data),
   });
 }
 

@@ -67,7 +67,7 @@ export default function AdminSignupUsersPage() {
         )}
 
         {!isCheckingAccess && !canReadUsers && (
-          <PermissionDeniedState description="Signup users dekhne ke liye user:read permission assign honi chahiye." />
+          <PermissionDeniedState description="You don't have permission to see signup users." />
         )}
 
         {!isCheckingAccess &&
@@ -89,7 +89,7 @@ export default function AdminSignupUsersPage() {
           usersQuery.isError && (
           <div className="rounded-2xl border border-red-200 bg-red-50 p-6">
             <h2 className="font-semibold text-red-700">
-              Signup users load nahi ho pa rahe.
+              Coudn't load signup users
             </h2>
 
             <p className="mt-1 text-sm text-red-600">

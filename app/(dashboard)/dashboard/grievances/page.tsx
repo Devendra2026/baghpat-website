@@ -38,7 +38,7 @@ export default function AdminGrievancesPage() {
   if (!canReadGrievances) {
     return (
       <section className="p-4 sm:p-6 lg:p-8">
-        <PermissionDeniedState description="Public grievances dekhne ke liye grievance:read permission assign honi chahiye." />
+        <PermissionDeniedState description="You don't have permission to see grievance" />
       </section>
     );
   }
