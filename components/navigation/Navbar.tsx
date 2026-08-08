@@ -254,10 +254,11 @@ export default function Navbar() {
             {/* Logo in drawer */}
             <div className="space-y-6">
               <div className="flex items-center gap-2 border-b border-slate-700 pb-4">
-                <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="50" cy="50" r="48" stroke="#FF9933" strokeWidth="4" fill="#0A2540" />
-                  <path d="M35 50 L65 50 M50 35 L50 65" stroke="#FFFFFF" strokeWidth="4" />
-                </svg>
+                <img
+                  src="https://cdn.s3waas.gov.in/s30336dcbab05b9d5ad24f4333c7658a0e/uploads/2018/02/2018021632.png"
+                  alt="Baghpat Nagar Palika Logo"
+                  className="w-8 h-8 object-contain"
+                />
                 <div className="leading-none text-left">
                   <span className="text-xs font-bold text-white uppercase block">Baghpat Nagar Palika</span>
                   <span className="text-[10px] text-gov-saffron block">Portal Menu</span>
